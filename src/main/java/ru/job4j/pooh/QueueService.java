@@ -8,9 +8,10 @@ public class QueueService implements Service {
     private final ConcurrentHashMap<String,
             ConcurrentLinkedQueue<String>> queues = new ConcurrentHashMap<>();
 
+
     @Override
     public Resp process(Req req) {
-        Resp resp = new Resp(req.httpRequestType(), "204");
+        Resp resp = new Resp("", "501");
         if (POST.equals(req.httpRequestType())) {
             queues.putIfAbsent(req.getSourceName(), new ConcurrentLinkedQueue<>());
             queues.get(req.getSourceName()).offer(req.getParam());
@@ -19,7 +20,7 @@ public class QueueService implements Service {
             String result = queues.getOrDefault(req.getSourceName(),
                     new ConcurrentLinkedQueue<>()).poll();
             if (result == null) {
-                resp = new Resp("", "404");
+                resp = new Resp("", "204");
             } else {
                 resp = new Resp(result, "200");
             }

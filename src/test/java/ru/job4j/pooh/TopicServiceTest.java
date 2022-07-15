@@ -37,6 +37,6 @@ public class TopicServiceTest {
                 new Req("GET", "topic", "weather", paramForPublisher)
         );
         assertThat(rsl.text(), is(""));
-        assertThat(rsl.status(), is("404"));
+        assertThat(rsl.status(), is("204"));
     }
 }

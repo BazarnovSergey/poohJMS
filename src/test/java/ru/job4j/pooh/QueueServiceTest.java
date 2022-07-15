@@ -30,6 +30,6 @@ public class QueueServiceTest {
         Resp result = queueService.process(
                 new Req("GET", "queue", "weather", null)
         );
-        assertThat(result.status(), is("404"));
+        assertThat(result.status(), is("204"));
     }
 }
