@@ -1,4 +1,4 @@
-# job4j_pooh
+# Pooh JMS
 
 #### В проекте используются такие технологии как:
 
@@ -97,3 +97,23 @@ poohMode - указывает на режим работы: queue или topic.
 sourceName - имя очереди или топика.
 
 param - содержимое запроса.
+
+#### Для сборки проекта понадобятся:
+1. JDK 17
+2. Maven 3.8.5
+
+#### Запуск проекта:
+1. Загрузите проект на свой компьютер.
+2. В корневой папке проекта выполните команду
+```shell
+mvn install
+```
+4. Для запуска проекта используйе команду
+ ```shell
+java -jar target/job4j_threads-1.0-SNAPSHOT.jar
+
+### Контакты для обратной связи:
+
+mail: 101sergey101@gmail.com
+
+telegram: [@bazarnov_sergey](https://t.me/bazarnov_sergey)
